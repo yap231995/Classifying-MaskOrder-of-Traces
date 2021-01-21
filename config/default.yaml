@@ -1,0 +1,28 @@
+general:
+  seed: 0
+  device: 0
+  logs_tensorboard: ./results/test_v2/
+  ascad_database_file: ./datasets/ASCAD_dataset/ASCAD_dataset/ASCAD.h5
+
+
+gen_mask_traces:
+   n_features: 700
+   n_traces: 50000
+   var_noise: 0.1
+   k: 0x03
+
+
+dataloader:
+  scaling: feature_scaling_m1_1
+  batch_size: 50
+  num_workers: 0
+  shuffle: True
+  trainsize: 45000
+  valsize: 5000
+
+test_dataloader:
+  scaling: feature_scaling_m1_1
+  n_traces: 10000
+  batch_size: 10000
+  num_workers: 0
+  shuffle: False
