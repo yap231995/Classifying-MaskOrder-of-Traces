@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2214f09-210a-49df-9462-5bef8dc6770f" name="Default Changelist" comment="Done with preprocessing of data" />
+    <list default="true" id="e2214f09-210a-49df-9462-5bef8dc6770f" name="Default Changelist" comment="Done with preprocessing of data">
+      <change afterPath="$PROJECT_DIR$/runs/first run/events.out.tfevents.1611309618.DESKTOP-A8C7E5B.4888.0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Classifying-MaskOrder-of-Traces.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Classifying-MaskOrder-of-Traces.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/load_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order0.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order1_nomaskleak.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order1_nomaskleak.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/default.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/net.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,15 +39,18 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1nHJBSzuuQV59npWAX33ChrtYj2" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Exploring NN on the different order of masking" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -68,7 +84,7 @@
       <method v="2" />
     </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TVLA" />
+      <module name="Classifying-MaskOrder-of-Traces" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -79,7 +95,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Ivan\Desktop\Trevor\NTU (codes)\Exploring NN on the different order of masking\main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611215134054</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Done with preprocessing of data">
+      <created>1611216003009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1611216003009</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,6 +154,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LIMIT_HISTORY" value="false" />
     <MESSAGE value="Done with preprocessing of data" />
     <option name="LAST_COMMIT_MESSAGE" value="Done with preprocessing of data" />

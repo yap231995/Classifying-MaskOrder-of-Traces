@@ -26,3 +26,11 @@ test_dataloader:
   batch_size: 10000
   num_workers: 0
   shuffle: False
+
+
+train:
+  criterion: Categorical Cross Entropy Loss
+  optimizer: Adam
+  epochs: 50
+  lr: 5e-3
+  momentum: 0.9
