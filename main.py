@@ -82,28 +82,32 @@ valloader = torch.utils.data.DataLoader(valset, batch_size=config.dataloader.bat
 
 dataloader = {"train": trainloader, "val": valloader}
 # Load Testset.
-# testset = -1
-# if config.dataloader.scaling == "horizontal_scale_0_1":
-#     testset = MaskingDataset_test(config, transform=Horizontal_scale_0_1)
-# elif config.dataloader.scaling == "horizontal_scale_m1_1":
-#     testset = MaskingDataset_test(config, transform=Horizontal_scale_m1_1)
-# else:
-#     scaler = trainset.get_feature_scaler()
-#     testset= MaskingDataset_test(config, transform=compose, feature_scaler=scaler)
-#     testset.feature_scaling()
-#
-#
-# #testset.to_categorical(num_classes=256)
-# testloader = torch.utils.data.DataLoader(testset, batch_size=config.test_dataloader.batch_size,
-#                                          shuffle=config.test_dataloader.shuffle,
-#                                         num_workers=config.test_dataloader.num_workers)
-# print("Trainset:")
-# print(len(trainset))
+testset = -1
+if config.dataloader.scaling == "horizontal_scale_0_1":
+    testset = MaskingDataset_test(config, transform=Horizontal_scale_0_1)
+elif config.dataloader.scaling == "horizontal_scale_m1_1":
+    testset = MaskingDataset_test(config, transform=Horizontal_scale_m1_1)
+else:
+    scaler = trainset.get_feature_scaler()
+    testset= MaskingDataset_test(config, transform=compose, feature_scaler=scaler)
+    testset.feature_scaling()
+
+
+#testset.to_categorical(num_classes=256)
+testloader = torch.utils.data.DataLoader(testset, batch_size=config.test_dataloader.batch_size,
+                                         shuffle=config.test_dataloader.shuffle,
+                                        num_workers=config.test_dataloader.num_workers)
+print("Trainset:")
+print(len(trainset))
+print("Valset:")
+print(len(valset))
+
 # for i in range(len(trainset)):
 # #     print(trainset[i])
 #      print(trainset[i]["trace"])
 
-# print("Testset:")
+print("Testset:")
+print(len(testset))
 # for i in range(len(testset)):
 #     print("testset " + str(i))
 #     print(testset[i]["trace"])
@@ -127,16 +131,16 @@ for epoch in range(config.train.epochs):  # loop over the dataset multiple times
             net.eval()
 
         running_loss = 0.0
-
+        correct = 0
+        total = 0
         for i, data in enumerate(dataloader[phase], 0):
             # get the inputs; data is a list of [inputs, labels]
             inputs, labels = data["trace"].float(), data["maskorder"].float()
             #print(inputs.shape)
             # zero the parameter gradients
             optimizer.zero_grad()
-            ## TODO: Set up accuracy for both train set and var set.
-            # correct = 0
-            # total = 0
+            ##Set up accuracy for both train set and var set.
+
             # forward + backward + optimize
             with torch.set_grad_enabled(phase == "train"):
                 outputs = net(inputs)
@@ -147,9 +151,9 @@ for epoch in range(config.train.epochs):  # loop over the dataset multiple times
                     loss.backward()
                     optimizer.step()
 
-                # _, predicted = torch.max(outputs.data, 1)
-                # total += labels.size(0)
-                # correct += (predicted == labels).sum().item()
+            _, predicted = torch.max(outputs.data, 1) ##return (values, indices),
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
 
             # print statistics
             running_loss += loss.item()
@@ -159,23 +163,41 @@ for epoch in range(config.train.epochs):  # loop over the dataset multiple times
            scheduler.step()
 
         epoch_loss = running_loss / len(dataloader[phase])
+        epoch_accuracy = 100 * correct /total
         if phase == "train":
             writer.add_scalar('training loss', epoch_loss, epoch * len(dataloader["train"]))
+            writer.add_scalar('training accuracy', epoch_accuracy, epoch * len(dataloader["train"]))
         elif phase == "val":
             writer.add_scalar('val loss', epoch_loss, epoch * len(dataloader["val"]))
+            writer.add_scalar('val accuracy', epoch_accuracy, epoch * len(dataloader["train"]))
 
         print('{} Epoch Loss: {:.4f}'.format(phase, epoch_loss))
-
-
+        print('{} Epoch Accuracy: {:.2f}%%'.format(phase, epoch_accuracy))
 
 print('Finished Training')
 
 #Saving trained model and loading model.
-PATH = './model/firstmodel'
+PATH = './model/firstmodel.pth'
 torch.save(net.state_dict(), PATH)
 net = Net()
 #net.load_state_dict(torch.load(PATH))
 
-
-
+correct = 0
+total = 0
+running_loss= 0
+with torch.no_grad():
+    for data in testloader:
+        inputs, labels = data["trace"].float(), data["maskorder"].float()
+        test_outputs = net(inputs)
+        loss = criterion(outputs, labels)
+        _, predicted = torch.max(test_outputs.data, 1)
+        total += labels.size(0)
+        correct += (predicted == labels).sum().item()
+        running_loss += loss.item()
+test_loss = running_loss / len(testloader)
+test_accuracy = 100 * correct /total
+print('Test_Loss: {:.4f}%%'.format(test_loss))
+print('Test_Accuracy: {:.2f}%%'.format(test_loss))
+writer.add_hparams({'lr': config.train.lr},
+              {'hparam/test_accuracy': test_loss, 'hparam/test_loss':  test_loss})
 

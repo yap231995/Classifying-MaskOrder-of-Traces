@@ -21,6 +21,7 @@ class MaskingDataset_train(Dataset):
         # self.traces_mask_order2, self.Y2 = self.Generator.gen_many_trace_mask_order2()
         # self.traces_mask_order3, self.Y3 = self.Generator.gen_many_trace_mask_order3()
         self.Mix_traces, _, self.MaskOrders = self.Generator.gen_mix_traces_order_0to3(config.gen_mask_traces.n_traces)
+        self.test_size_frac = config.dataloader.valsize/config.gen_mask_traces.n_traces
 
     def __len__(self):
         return len(self.Mix_traces)
@@ -42,8 +43,8 @@ class MaskingDataset_train(Dataset):
 
     ### preprocessing with respect to the features
 
-    def train_validation_split(self, test_size = 0.1):
-        self.Mix_traces, Mix_traces_validation, self.MaskOrders, MaskOrders_validation = model_selection.train_test_split(self.Mix_traces, self.MaskOrders, test_size = test_size, random_state =0)
+    def train_validation_split(self):
+        self.Mix_traces, Mix_traces_validation, self.MaskOrders, MaskOrders_validation = model_selection.train_test_split(self.Mix_traces, self.MaskOrders, test_size = self.test_size_frac, random_state =0)
         return [Mix_traces_validation,MaskOrders_validation]
 
     def feature_min_max_scaling(self, a, b):

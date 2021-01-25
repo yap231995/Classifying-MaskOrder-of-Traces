@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2214f09-210a-49df-9462-5bef8dc6770f" name="Default Changelist" comment="Done with preprocessing of data">
-      <change afterPath="$PROJECT_DIR$/runs/first run/events.out.tfevents.1611309618.DESKTOP-A8C7E5B.4888.0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Classifying-MaskOrder-of-Traces.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Classifying-MaskOrder-of-Traces.iml" afterDir="false" />
+    <list default="true" id="e2214f09-210a-49df-9462-5bef8dc6770f" name="Default Changelist" comment="Update with a Neural Network.">
+      <change afterPath="$PROJECT_DIR$/runs/first run/events.out.tfevents.1611576277.DESKTOP-A8C7E5B.10156.0" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/load_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/load_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order0.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order1_nomaskleak.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order1_nomaskleak.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Toy code (Masking traces)/traces_mask_order3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Toy traces/traces_mask_order3.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/default.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/net.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/runs/first run/events.out.tfevents.1611309618.DESKTOP-A8C7E5B.4888.0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/datagenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/datagenerator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gen_mask_traces.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/gen_mask_traces.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +45,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Side Channel Analysis/SCA_reproduction" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -138,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611216003009</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Update with a Neural Network.">
+      <created>1611311134743</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1611311134743</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +159,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LIMIT_HISTORY" value="false" />
     <MESSAGE value="Done with preprocessing of data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Done with preprocessing of data" />
+    <MESSAGE value="Update with a Neural Network." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update with a Neural Network." />
   </component>
 </project>

@@ -87,6 +87,7 @@ class TraceGenerator(object):
         m2=np.random.randint(256)
         label= self.SBox[p^self.k]
         trace[10]= label^m1^m2
+        trace[10]= label^m1^m2
         trace[5]= m1
         trace[15]= m2
         trace= trace+ np.random.normal(0, self.var_noise, self.n_features)

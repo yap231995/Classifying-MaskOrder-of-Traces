@@ -17,8 +17,8 @@ dataloader:
   batch_size: 50
   num_workers: 0
   shuffle: True
-  trainsize: 45000
-  valsize: 5000
+  trainsize: 40000
+  valsize: 10000
 
 test_dataloader:
   scaling: feature_scaling_m1_1
